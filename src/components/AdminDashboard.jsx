@@ -14,7 +14,7 @@ const AdminDashboard = () => {
       return;
     }
 
-    fetch("http://localhost:5002/api/requests", {
+    fetch("https://server-81t9.onrender.com/api/requests", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
