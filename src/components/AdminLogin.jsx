@@ -19,7 +19,7 @@ const AdminLogin = () => {
     const { username, password } = form;
   
     try {
-      const res = await fetch('http://localhost:5002/api/auth/login', {
+      const res = await fetch('https://server-81t9.onrender.com/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
