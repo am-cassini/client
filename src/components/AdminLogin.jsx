@@ -15,8 +15,9 @@ const AdminLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault(); 
-  
     const { username, password } = form;
+  
+    console.log("Submitting login for:", username);
   
     try {
       const res = await fetch('https://server-81t9.onrender.com/api/auth/login', {
@@ -25,7 +26,10 @@ const AdminLogin = () => {
         body: JSON.stringify({ username, password }),
       });
   
+      console.log("Response status:", res.status);
+  
       const data = await res.json();
+      console.log("Response data:", data);
   
       if (res.ok) {
         localStorage.setItem('token', data.token);
@@ -34,10 +38,11 @@ const AdminLogin = () => {
         alert(data.message || 'Login failed');
       }
     } catch (err) {
-      console.error(err);
+      console.error("Fetch error:", err);
       alert('Something went wrong');
     }
   };
+  
   
 
   return (
