@@ -11,7 +11,7 @@ function Login({ onLogin }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/login', form);
+      const res = await axios.post('https://server-81t9.onrender.com/api/auth/login', form);
       localStorage.setItem('token', res.data.token);
       onLogin(res.data.user); // update user context
     } catch (err) {

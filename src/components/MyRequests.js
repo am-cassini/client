@@ -7,7 +7,7 @@ function MyRequests() {
   useEffect(() => {
     const fetchData = async () => {
       const token = localStorage.getItem('token');
-      const res = await axios.get('/api/my-requests', {
+      const res = await axios.get('https://server-81t9.onrender.com/api/my-requests', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRequests(res.data);

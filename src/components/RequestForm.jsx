@@ -22,13 +22,13 @@ const RequestForm = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.get("http://localhost:5002/api/requests/latest");
+      const res = await axios.get("https://server-81t9.onrender.com/api/requests/latest");
       const lastControl = res.data?.controlNumber || "REQ-0000";
       const lastNumber = parseInt(lastControl.split("-")[1]);
       const newNumber = lastNumber + 1;
       const newControl = `REQ-${String(newNumber).padStart(4, "0")}`;
 
-      await axios.post("http://localhost:5002/api/requests", {
+      await axios.post("https://server-81t9.onrender.com/api/requests", {
         ...form,
         controlNumber: newControl,
         status: "Pending",

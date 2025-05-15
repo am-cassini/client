@@ -8,7 +8,7 @@ const RequestList = () => {
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:5002/api/requests", {
+      const response = await axios.get("https://server-81t9.onrender.com/api/requests", {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -25,7 +25,7 @@ const RequestList = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:5002/api/requests/${id}`,
+        `https://server-81t9.onrender.com/api/requests/${id}`,
         { status: "Done" },
         {
           headers: {
